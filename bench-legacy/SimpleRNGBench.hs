@@ -253,12 +253,12 @@ main = do
         timeit th freq "System.Random BIG Integers" gen (randomR (0, (2::Integer) ^ (5000::Int)))
 
  --       when (not$ NoC `elem` opts) $ do
- --	  putStrLn$ "  Comparison to C's rand():"
- --	  timeit_foreign th freq "ptr store in C loop"   store_loop
- --	  timeit_foreign th freq "rand/store in C loop"  blast_rands
- --	  timeit_foreign th freq "rand in Haskell loop" (\n ptr -> forM_ [1..n]$ \_ -> rand )
- --	  timeit_foreign th freq "rand/store in Haskell loop"  (\n ptr -> forM_ [1..n]$ \_ -> do n <- rand; poke ptr n )
- --	  return ()
+ --   putStrLn$ "  Comparison to C's rand():"
+ --   timeit_foreign th freq "ptr store in C loop"   store_loop
+ --   timeit_foreign th freq "rand/store in C loop"  blast_rands
+ --   timeit_foreign th freq "rand in Haskell loop" (\n ptr -> forM_ [1..n]$ \_ -> rand )
+ --   timeit_foreign th freq "rand/store in Haskell loop"  (\n ptr -> forM_ [1..n]$ \_ -> do n <- rand; poke ptr n )
+ --   return ()
 
   -- Test with 1 thread and numCapabilities threads:
   gamut 1
